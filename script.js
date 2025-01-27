@@ -46,3 +46,10 @@ for (let i = 0; i < cards.length; i++) {
         hidden.classList.remove('hidden');
     });
 }
+
+
+const button = document.querySelector('.btn');
+
+button.addEventListener('click', () => {
+    hidden.classList.add('hidden');
+})
