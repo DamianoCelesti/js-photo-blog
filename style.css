@@ -1,0 +1,40 @@
+/* GENERAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Edu Tas Beginner', sans-serif;
+}
+
+.wall {
+    background-image: url('./img/wall.png');
+}
+
+
+.cork {
+    background-image: url('./img/cork.png');
+}
+
+.card-text {
+    font-family: 'Sometype Mono', monospace;
+}
+
+.card {
+    position: relative;
+}
+
+.card-img-top {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.pin {
+    position: absolute;
+    top: -10px;
+    left: 45%;
+}
+
