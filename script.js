@@ -14,17 +14,20 @@ axios.get(endpoint)
         const data = response.data;
         //console.log(data);
 
-        // Variabile per tracciare l'indice delle card
-        let index = 0;
+        
         // Itero sui dati ricevuti
         for (let i = 0; i < data.length; i++) {
             const infoViaggi = data[i];
-            //console.log(infoViaggi);
-
+            console.log(infoViaggi);
+            // console.log(i);
+            // console.log('*******');
+            
+            
+            
             // Popolo la card corrente con le informazioni ottenute dall'API
-            cards[index].innerHTML += `
+            cards[i].innerHTML += `
             <img src="./img/pin.svg" class="pin" alt="pin">
-            <img src="${infoViaggi.url}" class="card-img-top p-3" alt="img ${index + 1}">
+            <img src="${infoViaggi.url}" class="card-img-top p-3" alt="img ${i + 1}">
             <div class="card-body">
                 <p class="card-text mb-0 ">${infoViaggi.date}</p>
                 <h2 class="card-title text-uppercase fw-bold">${infoViaggi.title}</h2> 
@@ -34,7 +37,7 @@ axios.get(endpoint)
             const hidden = document.querySelector('.d-none');
             const img = document.querySelector('.img-fluid');
             // Aggiungo un evento di click alla card per mostrare l'overlay
-            cards[index].addEventListener('click', () => {
+            cards[i].addEventListener('click', () => {
                 hidden.classList.remove('d-none');
                 img.src = infoViaggi.url;
             });
@@ -45,8 +48,8 @@ axios.get(endpoint)
                 hidden.classList.add('d-none');
 
             });
-            // Incremento l'indice per passare alla prossima card
-            index++;
+
+            
         }
 
 
